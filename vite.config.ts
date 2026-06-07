@@ -9,11 +9,19 @@ import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 // NITRO_PRESET env var overrides this (e.g. "cloudflare-module" on Lovable sandbox/publish,
 // "vercel" on Vercel). Default to "vercel" so `vercel deploy` works out of the box.
 const preset = process.env.NITRO_PRESET ?? "vercel";
+const vercelOutput = {
+  dir: "{{ rootDir }}/.vercel/output",
+  serverDir: "{{ output.dir }}/functions/__server.func",
+  publicDir: "{{ output.dir }}/static/{{ baseURL }}",
+};
 
 export default defineConfig({
   tanstackStart: {
     // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
     server: { entry: "server" },
   },
-  nitro: { preset },
+  nitro: {
+    preset,
+    ...(preset === "vercel" ? { output: vercelOutput } : {}),
+  },
 });
