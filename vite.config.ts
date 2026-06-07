@@ -10,9 +10,9 @@ import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 // "vercel" on Vercel). Default to "vercel" so `vercel deploy` works out of the box.
 const preset = process.env.NITRO_PRESET ?? "vercel";
 const vercelOutput = {
-  dir: ".vercel/output",
-  serverDir: ".vercel/output/functions/__server.func",
-  publicDir: ".vercel/output/static",
+  dir: "{{ rootDir }}/.vercel/output",
+  serverDir: "{{ output.dir }}/functions/__server.func",
+  publicDir: "{{ output.dir }}/static/{{ baseURL }}",
 };
 
 export default defineConfig({
