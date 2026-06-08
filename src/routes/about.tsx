@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/SiteLayout";
 import { Reveal } from "@/components/Reveal";
-import { GraduationCap, BookOpen, School } from "lucide-react";
+import { GraduationCap, BookOpen, School, Calendar, Building2 } from "lucide-react";
 import portrait from "@/assets/portrait.jpg";
 
 export const Route = createFileRoute("/about")({

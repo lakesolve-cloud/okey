@@ -1,11 +1,10 @@
 import { Link, useRouterState } from "@tanstack/react-router";
 import { useEffect, useState, type ReactNode } from "react";
-import { Menu, X, Mail, Phone, MapPin, Linkedin, Instagram, Facebook, Twitter } from "lucide-react";
+import { Menu, X, Mail, Phone, MapPin } from "lucide-react";
 
 const navLinks = [
   { to: "/", label: "Home" },
   { to: "/about", label: "About" },
-  { to: "/portfolio", label: "Portfolio" },
   { to: "/contact", label: "Contact" },
 ] as const;
 
