@@ -54,10 +54,6 @@ function Home() {
               My name is Precious Lawrence, a graduate of History and Diplomatic Studies with a passion for administration, communication, research, and professional excellence.
             </p>
             <div className="mt-10 flex flex-wrap gap-4">
-              <Link to="/portfolio" className="group inline-flex items-center gap-2 px-7 py-3.5 bg-foreground text-background rounded-full hover:bg-foreground/85 transition-all">
-                View Portfolio
-                <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-              </Link>
               <Link to="/contact" className="inline-flex items-center gap-2 px-7 py-3.5 border border-foreground/20 rounded-full hover:bg-foreground hover:text-background transition-all">
                 Contact Me
               </Link>

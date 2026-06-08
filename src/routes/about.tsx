@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/SiteLayout";
 import { Reveal } from "@/components/Reveal";
-import { GraduationCap, BookOpen, School } from "lucide-react";
+import { GraduationCap, BookOpen, School, Calendar, Building2 } from "lucide-react";
 import portrait from "@/assets/portrait.jpg";
 
 export const Route = createFileRoute("/about")({
@@ -46,6 +46,33 @@ const values = [
   { title: "Collaboration", desc: "Working effectively with others toward common goals." },
 ];
 
+const experience = [
+  {
+    role: "Customer Care Representative",
+    company: "Quitech Nig Ltd",
+    duration: "May 2025 – December 2025",
+    items: [
+      "Responded to customer inquiries professionally.",
+      "Assisted with issue resolution.",
+      "Maintained customer records.",
+      "Provided customer support across communication channels.",
+      "Contributed to positive customer experiences.",
+    ],
+  },
+  {
+    role: "Virtual Assistant",
+    company: "Salarify",
+    duration: "February 2024 – January 2025",
+    items: [
+      "Managed administrative tasks.",
+      "Supported documentation processes.",
+      "Assisted with scheduling and coordination.",
+      "Conducted online research.",
+      "Organized information and reports.",
+    ],
+  },
+];
+
 function About() {
   return (
     <SiteLayout>
@@ -78,6 +105,41 @@ function About() {
             <p>She is passionate about supporting teams, solving problems, managing information, and contributing to environments that encourage learning, collaboration, and professional growth.</p>
             <p className="font-display italic text-2xl text-foreground">"Her goal is to build a meaningful career where she can create value through effective communication, efficient administration, and continuous improvement."</p>
           </Reveal>
+        </div>
+      </section>
+
+      {/* EXPERIENCE */}
+      <section className="bg-beige/40 py-24 md:py-32">
+        <div className="container-px mx-auto max-w-6xl">
+          <Reveal>
+            <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground mb-4">— Experience</p>
+            <h2 className="font-display text-4xl md:text-5xl mb-16">Professional Roles</h2>
+          </Reveal>
+          <div className="space-y-8">
+            {experience.map((e, i) => (
+              <Reveal key={e.role} delay={i * 0.1}>
+                <article className="bg-background border border-border p-8 md:p-12 group hover:border-foreground transition-all duration-500">
+                  <div className="flex flex-col md:flex-row md:items-start justify-between gap-4 mb-8 pb-8 border-b border-border">
+                    <div>
+                      <h3 className="font-display text-3xl md:text-4xl">{e.role}</h3>
+                      <div className="mt-4 flex flex-wrap gap-x-6 gap-y-2 text-sm text-muted-foreground">
+                        <span className="inline-flex items-center gap-2"><Building2 size={14} /> {e.company}</span>
+                        <span className="inline-flex items-center gap-2"><Calendar size={14} /> {e.duration}</span>
+                      </div>
+                    </div>
+                  </div>
+                  <ul className="grid md:grid-cols-2 gap-x-10 gap-y-3">
+                    {e.items.map((it) => (
+                      <li key={it} className="flex gap-3 text-foreground/80">
+                        <span className="text-beige-dark mt-2">—</span>
+                        <span>{it}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </article>
+              </Reveal>
+            ))}
+          </div>
         </div>
       </section>
 
