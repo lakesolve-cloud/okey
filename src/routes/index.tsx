@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowUpRight, Briefcase, MessageCircle, Search, FileText, Users, Headphones } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Briefcase, MessageCircle, Search, FileText, Users, Headphones } from "lucide-react";
 import { SiteLayout } from "@/components/SiteLayout";
 import { Reveal } from "@/components/Reveal";
 import portrait from "@/assets/portrait.jpg";
